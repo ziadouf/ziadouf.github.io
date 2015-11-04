@@ -4,7 +4,9 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Ads-free videos - @ziadouf</title>
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
 
 	<script src="http://content.jwplatform.com/libraries/QgPeN5hS.js"></script>
   <!--[if lt IE 9]>
@@ -20,14 +22,27 @@
 			<button type="submit">Submit</button>
 		</form>
 		<p></p>
-		<div id="player">Loading the player...</div>
 		<script type="text/javascript">
-			if (QueryString.video) {
+			if (QueryString.video == "inside_out") {
+				document.write('<iframe width="560" height="315" src="http://ok.ru/videoembed/35372337710" frameborder="0" allowfullscreen></iframe>');
 				var playerInstance = jwplayer("player");
 				playerInstance.setup({
 					file: QueryString.video,
-					width: 720,
-					height: 480,
+					width: 640,
+					height: 360,
+					title: 'Basic Video Embed',
+					description: 'A video with a basic title and description!'
+				});
+			}
+			else if (QueryString.video) {
+				document.write('<div id="player">Loading the player...</div>');
+				var playerInstance = jwplayer("player");
+				playerInstance.setup({
+					file: QueryString.video,
+					width: 640,
+					height: 360,
+					title: 'Basic Video Embed',
+					description: 'A video with a basic title and description!'
 				});
 			}
 		</script>
