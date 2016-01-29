@@ -34,17 +34,6 @@
 					description: 'A video with a basic title and description!'
 				});
 			}
-			else if (QueryString.video == "home") {
-				document.write('<iframe width="560" height="315" src="http://ok.ru/videoembed/32804637229" frameborder="0" allowfullscreen></iframe>');
-				var playerInstance = jwplayer("player");
-				playerInstance.setup({
-					file: QueryString.video,
-					width: 640,
-					height: 360,
-					title: 'Basic Video Embed',
-					description: 'A video with a basic title and description!'
-				});
-			}
 			else if (QueryString.video) {
 				document.write('<div id="player">Loading the player...</div>');
 				var playerInstance = jwplayer("player");
